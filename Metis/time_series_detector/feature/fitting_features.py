@@ -168,7 +168,7 @@ def time_series_periodic_features(data_c_left, data_c_right, data_b_left, data_b
     Others are similar.
     '''
 
-    for w in range(1, DEFAULT_WINDOW, DEFAULT_WINDOW / 6):
+    for w in range(1, DEFAULT_WINDOW, int(DEFAULT_WINDOW / 6)):
         periodic_features.append(min(max(data_c_left[-w:]) - data_a[-1], 0))
         periodic_features.append(min(max(data_c_right[:w]) - data_a[-1], 0))
         periodic_features.append(min(max(data_b_left[-w:]) - data_a[-1], 0))
@@ -182,7 +182,7 @@ def time_series_periodic_features(data_c_left, data_c_right, data_b_left, data_b
     Add the difference of mean values between two subsequences
     '''
 
-    for w in range(1, DEFAULT_WINDOW, DEFAULT_WINDOW / 9):
+    for w in range(1, DEFAULT_WINDOW, int(DEFAULT_WINDOW / 9)):
         temp_value = np.mean(data_c_left[-w:]) - np.mean(data_a[-w:])
         periodic_features.append(abs(temp_value))
         if temp_value < 0:
@@ -211,7 +211,7 @@ def time_series_periodic_features(data_c_left, data_c_right, data_b_left, data_b
         else:
             periodic_features.append(1)
 
-    step = DEFAULT_WINDOW / 6
+    step = int(DEFAULT_WINDOW / 6)
     for w in range(1, DEFAULT_WINDOW, step):
         periodic_features.append(min(max(data_a[w - 1:w + step]) - data_a[-1], 0))
         periodic_features.append(max(min(data_a[w - 1:w + step]) - data_a[-1], 0))

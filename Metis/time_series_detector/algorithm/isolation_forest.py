@@ -60,7 +60,7 @@ class IForest(object):
         :return: 1 denotes normal, 0 denotes abnormal.
         """
         x_train = list(range(0, 2 * window + 1)) + list(range(0, 2 * window + 1)) + list(range(0, window + 1))
-        sample_features = zip(x_train, X)
+        sample_features = list(zip(x_train, X))
         clf = IsolationForest(self.n_estimators, self.max_samples, self.contamination, self.max_feature, self.bootstrap, self.n_jobs, self.random_state, self.verbose)
         clf.fit(sample_features)
         predict_res = clf.predict(sample_features)
