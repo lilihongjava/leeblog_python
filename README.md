@@ -1,4 +1,7 @@
 # leeblog_python
+python版本:3.6
+## Metis
+
 **Metis 博客地址**
 https://blog.csdn.net/qq_33873431/category_10028725.html
 
@@ -7,5 +10,5 @@ https://blog.csdn.net/qq_33873431/category_10028725.html
 - Metis异常检测算法源码概要
 - Metis异常检测初体验
 
-## 预测
+### 预测
 prediction_test.py 
