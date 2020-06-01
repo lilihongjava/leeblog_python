@@ -44,9 +44,9 @@ class PolynomialInterpolation(object):
         x_train = list(range(0, 2 * window + 1)) + list(range(0, 2 * window + 1)) + list(range(0, window + 1))
         x_train = np.array(x_train)
         x_train = x_train[:, np.newaxis]
-        avg_value = np.mean(X[-(window + 1):])
+        avg_value = np.mean(X[-(window + 1):])  # dataA取平均
         if avg_value > 1:
-            y_train = X / avg_value
+            y_train = X / avg_value  # 时序数据/dataA取平均
         else:
             y_train = X
         model = make_pipeline(PolynomialFeatures(self.degree), Ridge())
