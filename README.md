@@ -10,5 +10,6 @@ https://blog.csdn.net/qq_33873431/category_10028725.html
 - Metis异常检测算法源码概要
 - Metis异常检测初体验
 
-### 预测
-prediction_test.py 
+### 入口代码
+prediction_test.py 预测启动类
+train_test.py 训练启动类
