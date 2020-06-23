@@ -20,3 +20,15 @@ https://blog.csdn.net/qq_33873431/article/details/106758185
 
 ### 入口代码
 - main.py 
+
+## 3. TensorFlow gpu多卡例子
+**博客地址**
+
+### 入口代码
+main.py 
+
+* feature_column:  特征列
+* label_column:  标签列
+* gpu:  是否开启gpu
+* input1:  输入数据位置
+* output1:  模型输出位置
