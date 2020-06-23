@@ -11,10 +11,10 @@ import pandas as pd
 from sklearn import preprocessing
 
 
-from root_cause_analysis.common.common import cc_label
-from root_cause_analysis.feature.feature_extraction import make_feature, alarm_title_tfidf, alarm_statistics_feature, \
+from common.common import cc_label
+from feature.feature_extraction import make_feature, alarm_title_tfidf, alarm_statistics_feature, \
     alarm_title_w2v, failure_statistics_feature, alarm_title_features
-from root_cause_analysis.model.train import xgb_train
+from model.train import xgb_train
 
 if __name__ == '__main__':
     # 读取数据
