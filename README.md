@@ -1,5 +1,7 @@
 # leeblog_python
-python版本:3.6
+- python版本:3.6
+- cd到对应目录下执行
+
 ## 1. Metis
 
 **Metis 博客地址**
@@ -23,8 +25,11 @@ https://blog.csdn.net/qq_33873431/article/details/106758185
 
 ## 3. TensorFlow gpu多卡例子
 **博客地址**
+https://blog.csdn.net/qq_33873431/article/details/106905116
 
 ### 入口代码
+TensorFlow 2.0
+
 main.py 
 
 * feature_column:  特征列

@@ -8,7 +8,7 @@
 import pandas as pd
 import tensorflow as tf
 
-from TensorFlow_GPU.util.common_util import arg_check_transformation
+from util.common_util import arg_check_transformation
 
 
 def model_train(x_data, y_data):
@@ -46,17 +46,13 @@ def tf_linear_regression(feature_column=None, label_column=None, gpu=None, input
             BATCH_SIZE_PER_REPLICA = 64
             BATCH_SIZE = BATCH_SIZE_PER_REPLICA * strategy.num_replicas_in_sync
             print("x_data shape:" + str(x_data.shape))
-            # 维度必须是gpu卡的倍数
-            if x_data.shape[1] % gpu_len == 0 and x_data.shape[0] % gpu_len == 0:
-                print("执行多卡gpu")
-                with strategy.scope():
-                    layer0 = tf.keras.layers.Dense(1, input_shape=(x_data.shape[1],))
-                    model = tf.keras.Sequential([layer0])
-                    model.compile(loss='mean_squared_error', optimizer='adam')
-                model.fit(dataset.batch(BATCH_SIZE), verbose=False)
-            # 单卡gpu
-            else:
-                model = model_train(x_data, y_data)
+            # tf1.14.0版本 维度必须是gpu卡的倍数 if x_data.shape[1] % gpu_len == 0 and x_data.shape[0] % gpu_len == 0:
+            print("执行多卡gpu")
+            with strategy.scope():
+                layer0 = tf.keras.layers.Dense(1, input_shape=(x_data.shape[1],))
+                model = tf.keras.Sequential([layer0])
+                model.compile(loss='mean_squared_error', optimizer='adam')
+            model.fit(dataset.batch(BATCH_SIZE), verbose=False)
         else:
             model = model_train(x_data, y_data)
     except Exception:
