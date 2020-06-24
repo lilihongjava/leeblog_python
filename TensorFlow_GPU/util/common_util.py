@@ -4,6 +4,7 @@
 @file: common_util.py
 @desc: 
 """
+import tensorflow as tf
 
 
 def int_arg_check_transformation(arg_type, arg_name, val):
@@ -57,6 +58,20 @@ switcher = {
     "boolean_int": boolean_int_arg_check_transformation,
     "list_name_str": list_name_str_arg_check_transformation
 }
+
+
+def multiple_gpu_strategy(x_data, y_data):
+    tf.debugging.set_log_device_placement(True)
+    # tf.config.set_soft_device_placement(True)  # 自动选择一个gpu
+    gpu_len = len(tf.config.experimental.list_physical_devices('GPU'))
+    print("gpu_len:" + str(gpu_len))
+    dataset = tf.data.Dataset.from_tensor_slices((x_data.values, y_data.values))
+    strategy = tf.distribute.MirroredStrategy()
+    BATCH_SIZE_PER_REPLICA = 64
+    BATCH_SIZE = BATCH_SIZE_PER_REPLICA * strategy.num_replicas_in_sync
+    print("x_data shape:" + str(x_data.shape))
+    print("执行多卡gpu")
+    return dataset, BATCH_SIZE, strategy
 
 
 def arg_check_transformation(arg_type, arg_name, val):
