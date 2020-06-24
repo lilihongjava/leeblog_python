@@ -23,7 +23,7 @@ https://blog.csdn.net/qq_33873431/article/details/106758185
 ### 入口代码
 - main.py 
 
-## 3. TensorFlow gpu多卡例子
+## 3. TensorFlow gpu多卡例子(TensorFlow_GPU)
 **博客地址**
 https://blog.csdn.net/qq_33873431/article/details/106905116
 
@@ -37,3 +37,6 @@ main.py
 * gpu:  是否开启gpu
 * input1:  输入数据位置
 * output1:  模型输出位置
+
+## 4. TensorFlow 逻辑回归二分类，多分类(tensorflow_logistic_regression)
+main.py 
