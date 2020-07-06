@@ -39,4 +39,9 @@ main.py
 * output1:  模型输出位置
 
 ## 4. TensorFlow 逻辑回归二分类，多分类(tensorflow_logistic_regression)
-main.py 
+**博客地址**
+https://blog.csdn.net/qq_33873431/article/details/106947157
+
+## 5.  TensorFlow 2.0实现k_means(tensorflow_kmeans)
+**博客地址**
+https://blog.csdn.net/qq_33873431/article/details/107160609
