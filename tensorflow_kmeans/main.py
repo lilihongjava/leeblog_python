@@ -71,8 +71,8 @@ def model_predict(input_data, input_model_path, feature_column):
             )
         )
         examples.append(example.SerializeToString())
-
-    re = imported.signatures["cluster_index"](
+    # serving_default replace cluster_index
+    re = imported.signatures["serving_default"](
         examples=tf.constant(examples))
     return re["output"].numpy()
 
