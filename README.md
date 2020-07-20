@@ -45,3 +45,7 @@ https://blog.csdn.net/qq_33873431/article/details/106947157
 ## 5.  TensorFlow 2.0实现k_means(tensorflow_kmeans)
 **博客地址**
 https://blog.csdn.net/qq_33873431/article/details/107160609
+
+## 6.  sklearn实现lda主题模型LatentDirichletAllocation(lda)
+**博客地址**
+https://blog.csdn.net/qq_33873431/article/details/107465815
